@@ -1,7 +1,7 @@
 // initialising the count
 let count = 0;
 // for hex coloer change
-const hex = [0,1,2,3,4,5,6,7,8,9,"A","B","C","D","E","F"];
+// const hex = [0,1,2,3,4,5,6,7,8,9,"A","B","C","D","E","F"];
 
 
 const value = document.getElementById("value");
@@ -21,14 +21,23 @@ btns.forEach(function (btn){
         count =0;
     }
     value.textContent = count;
-    let hexcolor = "#";
-    for(let i=0;i<6;i++){
-        hexcolor += hex[getRandomNumber()];
+    if(count > 0){
+        value.style.color = "green";
     }
-    document.body.style.backgroundColor = hexcolor;
+    else if(count < 0){
+        value.style.color = "red";
+    }
+    else{
+        value.style.color = "black";
+    }
+    // let hexcolor = "#";
+    // for(let i=0;i<6;i++){
+    //     hexcolor += hex[getRandomNumber()];
+    // }
+    // document.body.style.backgroundColor = hexcolor;
     })
 })
 
-function getRandomNumber(){
-    return Math.floor(Math.random() * hex.length );
-}
+// function getRandomNumber(){
+//     return Math.floor(Math.random() * hex.length );
+// }
